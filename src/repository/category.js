@@ -8,7 +8,7 @@ const categories = [{
     }
 ];
 
-class CategorieRepository {
+class CategoryRepository {
     constructor() {
         this.categories = categories;
     }
@@ -18,13 +18,9 @@ class CategorieRepository {
     }
 
     insert(categorie) {
-        if (!categorie || Object.keys(categorie).length === 0) {
-            return "error: data kosong"
-        }
         this.categories.push(categorie);
-
         return categorie;
     }
 }
 
-module.exports = CategorieRepository;
+module.exports = CategoryRepository;

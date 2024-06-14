@@ -1,6 +1,6 @@
-class CategorieHandler {
-    constructor(categorieService) {
-        this.categorieService = categorieService;
+class CategoryHandler {
+    constructor(categoryService) {
+        this.categoryService = categoryService;
 
         // Binding
         this.getAll = this.getAll.bind(this);
@@ -8,7 +8,7 @@ class CategorieHandler {
     }
 
     getAll(req, res) {
-        const categories = this.categorieService.getAll();
+        const categories = this.categoryService.getAll();
 
         res.status(200).send({
             categories: categories
@@ -16,13 +16,13 @@ class CategorieHandler {
     }
 
     create(req, res) {
-        const categorie = req.body;
-        const createdcategorie = this.categorieService.create(categorie);
+        const category = req.body;
+        const createdcategory = this.categoryService.create(category);
 
         res.status(201).send({
-            message: createdcategorie
+            message: createdcategory
         })
     }
 }
 
-module.exports = CategorieHandler;
+module.exports = CategoryHandler;
